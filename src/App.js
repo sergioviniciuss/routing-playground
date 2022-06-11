@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Users } from './pages/Users';
 
 export const App = () => {
   return (
@@ -6,6 +8,11 @@ export const App = () => {
       <h1>React Router</h1>
 
       <Navigation />
+
+      <Routes>
+        <Route path="home" element={<Home />} />
+        <Route path="users" element={<Users />} />
+      </Routes>
     </>
   );
 };
