@@ -1,7 +1,20 @@
-export const Users = () => {
+import { Link, Outlet } from "react-router-dom";
+
+export const Users = ({ users }) => {
   return (
-    <main style={{ padding: '1rem 0' }}>
+    <>
       <h2>Users</h2>
-    </main>
+
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            <Link to={`/users/${user.id}`}>
+              {user.fullName}
+            </Link>
+          </li>
+        ))}
+        <Outlet />
+      </ul>
+    </>
   );
 };
